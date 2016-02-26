@@ -8,7 +8,7 @@
 <body>
 
 <div class="container">
-    <div class="row">
+    <div class="col-sm-6">
     <h1>Hello world.</h1>
          <div class="form-group">
             <label>Scrabble box</label>
