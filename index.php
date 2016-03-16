@@ -3,6 +3,7 @@
     <title>Ingredial</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/magicsuggest-min.css" rel="stylesheet">
+    <link href="css/override.css" rel="stylesheet">
 </head>
 <body>
 
