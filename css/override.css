@@ -1,4 +1,7 @@
 /* This is an override stylesheet for bootstrap */
 
-
+.col-centered {
+    float: none;
+    margin: 0 auto;
+}
 
