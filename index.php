@@ -8,7 +8,7 @@
 <body>
 
 <div class="container">
-    <div class="col-sm-6 col-centered">
+    <div class="col-sm-6 col-centered offset-top">
     <h1>Hello world.</h1>
          <div class="form-group">
             <label>Scrabble box</label>
