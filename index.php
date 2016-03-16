@@ -9,9 +9,8 @@
 
 <div class="container">
     <div class="col-sm-6 col-centered offset-top">
-    <h1>Hello world.</h1>
+    <h1 style="text-align: center">Ingredial</h1>
          <div class="form-group">
-            <label>Scrabble box</label>
             <input class="form-control" id="ms-scrabble">
         </div>
     </div>
