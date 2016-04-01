@@ -21,3 +21,12 @@
     width: 240px;
     margin-top: 8px
 }
+
+.force-resize {
+    width: 64px;
+}
+
+.body-buttons {
+    margin-top: 3px;
+    margin-bottom: 10px;
+}
