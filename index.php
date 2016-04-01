@@ -9,6 +9,8 @@
 </head>
 <body>
 
+<a href="tempsecond.php">Example search.</a>
+
 <div class="container">
 	<div class="col-sm-6 col-centered offset-top">
 		<img src="img/logo.png" class="img-responsive" id="main-logo" alt="Main logo" />
