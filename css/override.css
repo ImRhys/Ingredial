@@ -12,3 +12,12 @@
 #main-logo {
     margin-bottom: 5px;
 }
+
+.main-buttons {
+    width: 110px
+}
+
+.main-buttons-group {
+    width: 230px;
+    margin-top: 8px
+}
