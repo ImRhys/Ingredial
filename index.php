@@ -29,7 +29,7 @@
 <script>
 	$(function() {
 		$('#ms-scrabble').magicSuggest({
-			placeholder: 'Type some real or fake fruits',
+			placeholder: 'What do you have to hand?',
 			data: ['Banana', 'Apple', 'Orange', 'Lemon']
 		});
 	});
