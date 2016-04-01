@@ -9,7 +9,8 @@
 
 <div class="container">
     <div class="col-sm-6 col-centered offset-top">
-    <h1 style="text-align: center">Ingredial</h1>
+    <!--<h1 style="text-align: center">Ingredial</h1>-->
+        <img src="img/logo.png" class="img-responsive" alt="Main logo" />
          <div class="form-group">
             <input class="form-control" id="ms-scrabble">
         </div>
