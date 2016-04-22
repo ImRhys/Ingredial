@@ -65,5 +65,9 @@ body {
     left:0;
     bottom:0;
     width:100%;
-    background-color:black;
+    -webkit-filter: blur(1px);
+    -moz-filter: blur(1px);
+    -ms-filter: blur(1px);
+    -o-filter: blur(1px);
+    filter: blur(1px);
 }
