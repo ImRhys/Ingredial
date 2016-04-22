@@ -41,7 +41,6 @@
 
 <script>
 	$(function() {
-
         var apiKey = "";
 
 		var ms = $('#ms-scrabble').magicSuggest({
@@ -96,11 +95,11 @@
             //getSuggestion(ms.getValue());
             console.log(ms.getRawValue());
         });
-	});
 
-    $('.enter_link').click(function() {
-        $(this).parent().fadeOut(500);
-    });
+        $('.enter_link').click(function() {
+            $(this).parent().fadeOut(500);
+        });
+	});
 </script>
 </body>
 </html>
