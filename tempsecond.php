@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<div class="recipescontainer">
+<div class="container">
     <div class="col-sm-6 col-centered offset-top">
         <img src="img/logo.png" class="img-responsive" id="main-logo" alt="Main logo" />
         <div class="form-group">
@@ -23,6 +23,7 @@
         </div>
     </div>
 
+    <div class="recipes">
     <div class="col-md-9 col-centered table-bordered">
         <h3>Welcome text.</h3>
         <p class="maininfo">Lorem ipsum dolor sit amet, brute nonumes eum in, mea nibh debet phaedrum at. Sit perfecto oportere qualisque ex! Modus debet elitr cu vim, ei eripuit dignissim dissentias vix, vis eros similique eu! Has voluptatum accommodare ex. Impetus tritani labitur sed ad, mel id illud ridens dolorem.</p>
@@ -99,6 +100,7 @@
             </div>
         </div>
     </div>
+</div>
 
     <div class="col-md-9 col-centered">
         <hr>
