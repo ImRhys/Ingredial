@@ -43,7 +43,7 @@
 		});
 
         function getRecipe(RecipeId) {
-            var url = "httpss://api2.bigoven.com/recipe/" + RecipeId + "?api_key=" + apiKey;
+            var url = "https://api2.bigoven.com/recipe/" + RecipeId + "?api_key=" + apiKey;
             $.ajax({
                 type: "GET",
                 dataType: 'json',
@@ -58,7 +58,7 @@
         }
 
         function getSuggestion(CurrentStr) {
-            var url = "httpss://api2.bigoven.com/autocomplete?limit=10&query=" + CurrentStr + "&api_key=" + apiKey;
+            var url = "https://api2.bigoven.com/autocomplete?limit=10&query=" + CurrentStr + "&api_key=" + apiKey;
             $.ajax({
                 type: "GET",
                 dataType: 'json',
