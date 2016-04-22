@@ -43,10 +43,10 @@
 		});
 
         function getRecipe(RecipeId) {
-            var url = "https://api2.bigoven.com/recipe/" + RecipeId + "?api_key=" + apiKey;
+            var url = "https://api2.bigoven.com/recipe/" + RecipeId + "?api_key=" + apiKey + "&callback=?";
             $.ajax({
                 type: "GET",
-                dataType: 'json',
+                dataType: 'jsonp',
                 cache: false,
                 url: url,
                 success: function (data) {
@@ -58,7 +58,7 @@
         }
 
         function getSuggestion(CurrentStr) {
-            var url = "https://api2.bigoven.com/autocomplete?limit=10&query=" + CurrentStr + "&api_key=" + apiKey+ "&callback=?";
+            var url = "https://api2.bigoven.com/autocomplete?query=" + CurrentStr + "&limit=10&api_key=" + apiKey + "&callback=?";
             $.ajax({
                 type: "GET",
                 dataType: 'jsonp',
@@ -85,7 +85,8 @@
 
         $(ms).on('keyup', function(e, m, v){
             //alert('Key code # ' + v.keyCode);
-            getSuggestion(ms.getValue()[0]);
+            //getSuggestion(ms.getValue());
+            console.log(ms.getRawValue());
         });
 	});
 </script>
