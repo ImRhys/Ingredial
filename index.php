@@ -58,10 +58,10 @@
         }
 
         function getSuggestion(CurrentStr) {
-            var url = "https://api2.bigoven.com/autocomplete?limit=10&query=" + CurrentStr + "&api_key=" + apiKey;
+            var url = "https://api2.bigoven.com/autocomplete?limit=10&query=" + CurrentStr + "&api_key=" + apiKey+ "&callback=?";
             $.ajax({
                 type: "GET",
-                dataType: 'json',
+                dataType: 'jsonp',
                 cache: false,
                 url: url,
                 success: function (data) {
