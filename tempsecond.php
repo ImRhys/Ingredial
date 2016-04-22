@@ -23,13 +23,12 @@
         </div>
     </div>
 
-    <div class="recipes">
-    <div class="col-md-9 col-centered table-bordered">
+    <div class="col-md-9 col-centered table-bordered recipes">
         <h3>Welcome text.</h3>
         <p class="maininfo">Lorem ipsum dolor sit amet, brute nonumes eum in, mea nibh debet phaedrum at. Sit perfecto oportere qualisque ex! Modus debet elitr cu vim, ei eripuit dignissim dissentias vix, vis eros similique eu! Has voluptatum accommodare ex. Impetus tritani labitur sed ad, mel id illud ridens dolorem.</p>
     </div>
 
-    <div class="col-md-9 col-centered table-bordered">
+    <div class="col-md-9 col-centered table-bordered recipes">
         <hr>
         <div class="media">
             <div class="media-left">
@@ -100,7 +99,6 @@
             </div>
         </div>
     </div>
-</div>
 
     <div class="col-md-9 col-centered">
         <hr>
