@@ -7,9 +7,9 @@
 
     <link rel="shortcut icon" href="favicon.ico" />
 </head>
-<body class="recipes">
+<body>
 
-<div class="container">
+<div class="recipescontainer">
     <div class="col-sm-6 col-centered offset-top">
         <img src="img/logo.png" class="img-responsive" id="main-logo" alt="Main logo" />
         <div class="form-group">
