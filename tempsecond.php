@@ -7,7 +7,7 @@
 
     <link rel="shortcut icon" href="favicon.ico" />
 </head>
-<body>
+<body class="recipes">
 
 <div class="container">
     <div class="col-sm-6 col-centered offset-top">
