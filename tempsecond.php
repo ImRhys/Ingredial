@@ -16,7 +16,7 @@
             <form id="searchf" method="get" action="">
                 <input class="form-control" id="ms-scrabble">
                 <div class="center-block main-buttons-group">
-                    <button type="button" class="btn btn-default main-buttons" onclick="" style="margin-right: 5px">Search</button>
+                    <button type="button" class="btn btn-default main-buttons" onclick="">Search</button>
                     <button type="button" class="btn btn-default main-buttons" onclick="">Surprise Me</button>
                 </div>
             </form>
@@ -25,7 +25,7 @@
 
     <div class="col-md-9 col-centered table-bordered">
         <h3>Welcome text.</h3>
-        <p style="text-align: justify">Lorem ipsum dolor sit amet, brute nonumes eum in, mea nibh debet phaedrum at. Sit perfecto oportere qualisque ex! Modus debet elitr cu vim, ei eripuit dignissim dissentias vix, vis eros similique eu! Has voluptatum accommodare ex. Impetus tritani labitur sed ad, mel id illud ridens dolorem.</p>
+        <p class="maininfo">Lorem ipsum dolor sit amet, brute nonumes eum in, mea nibh debet phaedrum at. Sit perfecto oportere qualisque ex! Modus debet elitr cu vim, ei eripuit dignissim dissentias vix, vis eros similique eu! Has voluptatum accommodare ex. Impetus tritani labitur sed ad, mel id illud ridens dolorem.</p>
     </div>
 
     <div class="col-md-9 col-centered table-bordered">
@@ -102,7 +102,7 @@
 
     <div class="col-md-9 col-centered">
         <hr>
-        <p style="text-align: center">Copyright &copy; 2016 ingredial.domain.bla - All Rights Reserved</p>
+        <p class="footer">Copyright &copy; 2016 ingredial.domain.bla - All Rights Reserved</p>
     </div>
 </div>
 

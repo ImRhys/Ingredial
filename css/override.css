@@ -34,3 +34,21 @@
 body {
     background-color: F9F1DC;
 }
+
+.maininfo {
+
+    text-align: justify;
+
+}
+
+.searchbutton {
+
+    margin-right: 5px;
+
+}
+
+.footer {
+
+    text-align: center;
+
+}
