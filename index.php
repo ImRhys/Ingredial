@@ -1,3 +1,5 @@
+<!DOCTYPE HTML>
+
 <html>
 <head>
 	<title>Ingredial</title>
@@ -7,7 +9,16 @@
 
     <link rel="shortcut icon" href="favicon.ico" />
 </head>
+
+
 <body>
+
+<div id="splashscreen">
+    <h2>Welcome to Ingredial!</h2>
+    Throw in any ingredients you've got in your cupboard to find a tasty recipe!
+
+    <a href="#" class="enter_link">Enter on the website</a>
+</div>
 
 <a href="tempsecond.php">Example search.</a>
 
@@ -41,6 +52,10 @@
     function submitf() {
         $('#searchf').submit();
     }
+
+    $('.enter_link').click(function() {
+        $(this).parent().fadeOut(500);
+    });
 </script>
 </body>
 </html>
