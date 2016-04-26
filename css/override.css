@@ -32,7 +32,7 @@
 }
 
 .body-start {
-    background-image: url("img/ingredialblur.png");
+    background-image: url("../img/ingredialblur.png");
     -webkit-transition: background 1s linear;
     -moz-transition: background 1s linear;
     -ms-transition: background 1s linear;
@@ -68,7 +68,7 @@
     width: 100%;
     height: 140px;
     text-align: center;
-    background-image: url("img/ingredialblur.png");
+    background-image: url("../img/ingredialblur.png");
 }
 
 #splashscreen h1 {
@@ -77,5 +77,5 @@
 }
 
 #splashscreen a, #splashscreen a:visited {
-    background-image: url("img/ingredialblur.png");
+    background-image: url("../img/ingredialblur.png");
 }
