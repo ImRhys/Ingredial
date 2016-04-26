@@ -68,7 +68,7 @@
     width: 100%;
     height: 140px;
     text-align: center;
-    color: #ffffff;
+    backdrop-filter: blur(10px);
 }
 
 #splashscreen h1 {
