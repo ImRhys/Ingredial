@@ -22,7 +22,7 @@
 
 <a href="tempsecond.php">Example search.</a>
 
-<div class="container" id="main-search">
+<div class="container" id="main-search" style="display: none;">
   <div class="col-sm-6 col-centered offset-top">
     <img src="img/logo.png" class="img-responsive" id="main-logo" alt="Main logo"/>
 
