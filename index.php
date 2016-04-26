@@ -105,10 +105,15 @@
       alert("Random recipe!") //todo
     });
 
+    var counter = 3;
     $(ms).on('keyup', function (e, m, v) {
-      //alert('Key code # ' + v.keyCode);
-      //getSuggestion(ms.getValue());
-      console.log(ms.getRawValue());
+      if (ms.getRawValue().length > 2) { //BigOven won't accept query lower than three chars
+        counter++;
+        if (counter > 1) { //Cut our calls in half
+          console.log(ms.getRawValue()); //TODO send to /actual/ function
+          counter = 0;
+        }
+      }
     });
 
     $('.enter_link').click(function () {
