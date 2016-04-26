@@ -110,7 +110,7 @@
       if (ms.getRawValue().length > 2) { //BigOven won't accept query lower than three chars
         counter++;
         if (counter > 1) { //Cut our calls in half
-          console.log(ms.getRawValue()); //TODO send to /actual/ function
+          console.log(ms.getRawValue()); //TODO send to /actual/ function 
           counter = 0;
         }
       }
