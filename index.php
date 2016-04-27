@@ -102,8 +102,12 @@
         cache: false,
         url: url,
         success: function (data) {
-          console.log(data);
-          processRecipes(data);
+          if ($.isArray(data)) {
+            console.log(data);
+            processRecipes(data);
+          } else {
+            noAPIkeyPrompt();
+          }
         }
       });
     }
