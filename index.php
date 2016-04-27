@@ -165,7 +165,7 @@
     //Recipe button
     $('.button-r').click(function (e) {
       console.log(this.attr("recipeid"));
-      console.log(e);
+      console.log(e); 
     });
 
     var counter = 3;
