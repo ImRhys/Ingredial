@@ -187,7 +187,7 @@
         url: url,
         success: function (data) {
           if (!data.Message) {
-            getRecipes(encodeURIComponent(data.Title));
+            getRecipes([data.Title]);
           } else {
             noAPIkeyPrompt();
           }
@@ -207,10 +207,8 @@
     }
 
     function submitf() {
-      fRecipePrompt();
-      if (JSON.stringify(ms.getValue()) < 3) {
-        randomRecipe();
-      } else {
+      if (JSON.stringify(ms.getValue()) > 0) {
+        fRecipePrompt();
         getRecipes(ms.getValue());
       }
     }
