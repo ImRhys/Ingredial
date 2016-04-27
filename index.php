@@ -207,10 +207,8 @@
     }
 
     function submitf() {
-      if (JSON.stringify(ms.getValue()) > 0) {
-        fRecipePrompt();
-        getRecipes(ms.getValue());
-      }
+      fRecipePrompt();
+      getRecipes(ms.getValue());
     }
 
     //Submit button
