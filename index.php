@@ -109,7 +109,7 @@
       var Ingredients = "<ul>";
       var i;
       for (i = 0; i < Data.Ingredients.length; ++i) {
-        Ingredients += "<li>" + Data.Ingredients[i].Name + " " + Data.Ingredients[i].DisplayQuantity + " " + Data.Ingredients[i].Unit + "</li>";
+        Ingredients += "<li>" + Data.Ingredients[i].Name + " (" + Data.Ingredients[i].DisplayQuantity + " " + Data.Ingredients[i].Unit + ")</li>";
       }
       Ingredients += "</ul>";
 
