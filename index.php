@@ -87,7 +87,6 @@
     }
 
     function processRecipes(Data) {
-      //$("#recipes-main").fadeOut(500).fadeIn(500);
       $("#recipes-data").html(""); //Clear it out
 
       if (Data.Results.length > 0) {
@@ -153,7 +152,6 @@
         url: url,
         success: function (data) {
           if (!data.Message) {
-            console.log(data); //TODO delete after debugging!
             processRecipes(data);
           } else {
             noAPIkeyPrompt();
@@ -201,7 +199,7 @@
 
     //Random recipe button
     $('#randomr').click(function () {
-      alert("Random recipe!") //todo
+      alert("Random recipe!") //TODO <-- this
     });
 
     //Recipe and more info buttons
