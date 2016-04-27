@@ -102,7 +102,7 @@
         cache: false,
         url: url,
         success: function (data) {
-          if ($.isArray(data)) {
+          if (!data.message) {
             console.log(data);
             processRecipes(data);
           } else {
@@ -120,7 +120,7 @@
         cache: true,
         url: url,
         success: function (data) {
-          if ($.isArray(data)) {
+          if (!data.message) {
             ms.setData(data);
           } else {
             noAPIkeyPrompt();
