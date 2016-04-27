@@ -78,7 +78,6 @@
         cache: true,
         url: url,
         success: function (data) {
-          console.log(data); //TODO remove Debugging
           if ($.isArray(data)) {
             ms.setData(data);
           } else {
