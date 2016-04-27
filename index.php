@@ -186,6 +186,7 @@
         url: url,
         success: function (data) {
           if (!data.Message) {
+            fRecipePrompt();
             getRecipes(encodeURIComponent(data.Title));
           } else {
             noAPIkeyPrompt();
@@ -199,13 +200,17 @@
       alert("Please set the API key!");
     }
 
+    function fRecipePrompt() {
+      $("#recipes-main").fadeIn(500);
+      $("#recipes-main-header").html("Processing...");
+      $("#recipes-main-description").html("Please wait whilst we try and find you some tasty dishes!");
+    }
+
     function submitf() {
+      fRecipePrompt();
       if (JSON.stringify(ms.getValue()) < 3) {
         randomRecipe();
       } else {
-        $("#recipes-main").fadeIn(500);
-        $("#recipes-main-header").html("Processing...");
-        $("#recipes-main-description").html("Please wait whilst we try and find you some tasty dishes!");
         getRecipes(ms.getValue());
       }
     }
