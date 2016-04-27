@@ -91,7 +91,7 @@
     function processRecipes(Data) {
       //$("#recipes-main").fadeOut(500).fadeIn(500);
       $("#recipes-main-header").html("Hurray!");
-      $("#recipes-main-description").html("We found you some dishes for your selection...");
+      $("#recipes-main-description").html("We found you some dishes for your selection!");
       if (Data.Results.length > 0) {
         $("#recipes-data").html("<hr>"); //Clear it out before repopulating
 
