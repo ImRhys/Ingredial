@@ -55,8 +55,8 @@
       required: true
     });
 
-    function getRecipe(RecipeId) {
-      var url = "https://api2.bigoven.com/recipe/" + RecipeId + "?api_key=" + apiKey;
+    function getRecipe(RecipeArr) {
+      var url = "http://ingredial.azurewebsites.net/theprox.php?url=https://api2.bigoven.com/recipe/" + encodeURIComponent(RecipeArr.toString()) + "&api_key=" + apiKey;
       $.ajax({
         type: "GET",
         dataType: 'json',
@@ -92,9 +92,10 @@
     }
 
     function submitf() {
-      alert(JSON.stringify(ms.getValue()));
-      if (ms.getRawValue().length < 3) {
+      if (JSON.stringify(ms.getValue()) < 3) {
         //TODO Get random recipe
+      } else {
+        getRecipe(ms.getValue());
       }
     }
 
