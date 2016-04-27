@@ -207,7 +207,7 @@
     function registerBClicks() {
       $('.button-r').click(function (e) {
         if ($(e.target).attr("retrieved") && $(e.target).attr("retrieved") == "true") {
-          $(e.target).fadeToggle(500); //Already there so no need to get it again
+          $("#" + $(e.target).attr("recipeid")).fadeToggle(500); //Already there so no need to get it again
         } else {
           getRecipeData($(e.target).attr("recipeid"), $(e.target)); //Populate the data
         }
