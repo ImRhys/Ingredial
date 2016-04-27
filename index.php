@@ -137,8 +137,8 @@
         cache: true,
         url: url,
         success: function (data) {
-          processRecipe(data, RecipeID)
-          Target.attr("retrieved", "true")
+          processRecipe(data, RecipeID);
+          Target.attr("retrieved", "true");
         }
       });
     }
