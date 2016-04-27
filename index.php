@@ -98,6 +98,8 @@
     function processRecipes(Data) {
       $("#recipes-main").fadeOut(500).fadeIn(500);
       if (Data.Results.length > 0) {
+        $("#recipes-data").html("<hr>"); //Clear it out before repopulating
+
         var i;
         for (i = 0; i < Data.Results.length; ++i) {
           $("#recipes-data").append(generateRecipeHTML(Data.Results[i]));
