@@ -71,7 +71,7 @@
     }
 
     function getSuggestion(CurrentStr) {
-      var url = "http://ingredial.azurewebsites.net/theprox.php?url=https://api2.bigoven.com/recipe/autocomplete?query=" + CurrentStr + "&limit=10&api_key=" + apiKey;
+      var url = "http://ingredial.azurewebsites.net/theprox.php?url=https://api2.bigoven.com/recipe/autocomplete&query=" + CurrentStr + "&limit=10&api_key=" + apiKey;
       $.ajax({
         type: "GET",
         dataType: 'json',

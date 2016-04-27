@@ -7,9 +7,6 @@ foreach($_GET as $key => $value){
   }
 }
 $parameters = substr($parameters, 1);
-
-echo $parameters;
-
 $finalurl = $url . "?" . $parameters;
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
