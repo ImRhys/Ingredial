@@ -109,21 +109,19 @@
       //Generate Ingredients list
       var Ingredients = "<ul>";
       var i;
-      for (i = 0; i < Data.Ingredients; ++i) {
+      for (i = 0; i < Data.Ingredients.length; ++i) {
         Ingredients += "<li>" + Data.Ingredients[i].Name + " " + Data.Ingredients[i].DisplayQuantity + " " + Data.Ingredients[i].Unit + "</li>";
       }
       Ingredients += "</ul>";
 
       //Return template string
       return ""
-      + "<p class='text-justify'>" + Data.Description + "</p>"
-      + "<ul>"
-      + "<li>Cuisine: " + Data.Cuisine + "</li>"
-      + "<li>Category:" + Data.Category + "</li>"
-      + "<li>Ingredients: " + Ingredients + " </li>"
-      + "<li>Instructions: <p>" + Data.Instructions + "</p></li>"
-      + "<li>" + Data.FavoriteCount + " people favorited this recipe.</li>"
-      + "</ul>"
+      + "<p class='text-justify'><i>" + Data.Description + "</i></p>"
+      + "<h4>Cuisine</h4>" + Data.Cuisine
+      + "<h4>Category</h4>" + Data.Category
+      + "<h4>Ingredients</h4>" + Ingredients
+      + "<h4>Instructions</h4><p>" + Data.Instructions.replace(/(?:\r\n|\r|\n)/g, '<br />') + "</p>"
+      + "<p>" + Data.FavoriteCount + " people favorited this recipe.</p>"
       ;
     }
 
