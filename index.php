@@ -15,8 +15,8 @@
 <div id="splashscreen">
   <h1>Welcome to Ingredial!</h1>
   Throw in any ingredients you've got in your cupboard to find a tasty recipe!
-  <br />
-  <br />
+  <br/>
+  <br/>
   <a href="#" class="enter_link">Enter the website</a>
 </div>
 
@@ -38,35 +38,40 @@
   </div>
 
   <!-- Recipes -->
-  <div class="col-md-9 col-centered table-bordered recipes">
-    <h3>Welcome text.</h3>
-    <p class="maininfo">Lorem ipsum dolor sit amet, brute nonumes eum in, mea nibh debet phaedrum at. Sit perfecto oportere qualisque ex! Modus debet elitr cu vim, ei eripuit dignissim dissentias vix, vis eros similique eu! Has voluptatum accommodare ex. Impetus tritani labitur sed ad, mel id illud ridens dolorem.</p>
-  </div>
+  <div id="recipes-main" style="display: none;">
+    <div class="col-md-9 col-centered table-bordered recipes">
+      <h3>Welcome text.</h3>
 
-  <div class="col-md-9 col-centered table-bordered recipes">
-    <hr>
+      <p class="maininfo">Lorem ipsum dolor sit amet, brute nonumes eum in, mea nibh debet phaedrum at. Sit perfecto
+        oportere qualisque ex! Modus debet elitr cu vim, ei eripuit dignissim dissentias vix, vis eros similique eu! Has
+        voluptatum accommodare ex. Impetus tritani labitur sed ad, mel id illud ridens dolorem.</p>
+    </div>
 
-    <div class="media">
-      <div class="media-left"> <!-- Food image -->
-        <a href="#">
-          <img class="media-object force-resize" src="" alt="">
-        </a>
-      </div>
-      <div class="media-body">
-        <h4 class="media-heading"></h4> <!-- Dish name -->
-        <p class="text-justify"></p> <!-- Dish description -->
-        <button type="button" class="btn btn-default body-buttons">Recipe</button>
-        <button type="button" class="btn btn-default body-buttons">More Information</button>
-        <div class="col-sm-12 table-bordered">
+    <div class="col-md-9 col-centered table-bordered recipes">
+      <hr>
 
+      <div class="media">
+        <div class="media-left"> <!-- Food image -->
+          <a href="#">
+            <img class="media-object force-resize" src="" alt="">
+          </a>
+        </div>
+        <div class="media-body">
+          <h4 class="media-heading"></h4> <!-- Dish name -->
+          <p class="text-justify"></p> <!-- Dish description -->
+          <button type="button" class="btn btn-default body-buttons">Recipe</button>
+          <button type="button" class="btn btn-default body-buttons">More Information</button>
+          <div class="col-sm-12 table-bordered">
+
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <div class="col-md-9 col-centered">
-    <hr>
-    <p class="footer">Copyright &copy; 2016 ingredial.domain.bla - All Rights Reserved</p>
+    <div class="col-md-9 col-centered">
+      <hr>
+      <p class="footer">Copyright &copy; 2016 ingredial.domain.bla - All Rights Reserved</p>
+    </div>
   </div>
 </div>
 
@@ -85,6 +90,10 @@
       required: true
     });
 
+    function processRecipes(Data) {
+      $("recipes-main").fadeIn(500);
+    }
+
     function getRecipe(RecipeArr) {
       var url = "http://ingredial.azurewebsites.net/theprox.php?url=https://api2.bigoven.com/recipes/&any_kw=" + encodeURIComponent(RecipeArr.toString()) + "&api_key=" + apiKey;
       $.ajax({
@@ -94,8 +103,7 @@
         url: url,
         success: function (data) {
           console.log(data);
-          //$("#RecipeTitle").html(data.Title);
-          //$("#instructions").html(data.Instructions);
+          processRecipes(data);
         }
       });
     }
