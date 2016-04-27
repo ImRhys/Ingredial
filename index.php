@@ -41,7 +41,7 @@
   <div id="recipes-main" style="display: none;">
     <div class="col-md-9 col-centered table-bordered recipes">
       <h3 id="recipes-main-header">Welcome text.</h3>
-      <p class="recipes-main-description"></p>
+      <p id="recipes-main-description" class="maininfo"></p>
     </div>
 
     <div class="col-md-9 col-centered table-bordered recipes" id="recipes-data"> <!-- Auto generated -->
@@ -91,7 +91,7 @@
     }
 
     function processRecipes(Data) {
-      $("#recipes-main").fadeOut(500).fadeIn(500);
+      //$("#recipes-main").fadeOut(500).fadeIn(500);
       $("#recipes-main-header").html("Hurray!");
       $("#recipes-main-description").html("We found you some dishes for your selection...");
       if (Data.Results.length > 0) {
