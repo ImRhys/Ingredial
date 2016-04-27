@@ -121,7 +121,7 @@
       + "<h4>Category</h4>" + Data.Category
       + "<h4>Ingredients</h4>" + Ingredients
       + "<h4>Instructions</h4><p>" + Data.Instructions.replace(/(?:\r\n|\r|\n)/g, '<br />') + "</p>"
-      + "<p>" + Data.FavoriteCount + " people favorited this recipe.</p>"
+      + "<p><b>" + Data.FavoriteCount + " people favorited this recipe.</b></p>"
       ;
     }
 
@@ -129,16 +129,16 @@
       $("#" + RecipeID).html(generateRecipeDetails(Data));
     }
 
-    function getRecipeData(RecipeID) {
+    function getRecipeData(RecipeID, Target) {
       var url = "http://ingredial.azurewebsites.net/theprox.php?url=https://api2.bigoven.com/recipe/" + RecipeID + "&api_key=" + apiKey;
       $.ajax({
         type: "GET",
         dataType: 'json',
-        cache: false,
+        cache: true,
         url: url,
         success: function (data) {
-          console.log(data); //TODO delete after debugging!
           processRecipe(data, RecipeID)
+          Target.attr("retrieved", "true")
         }
       });
     }
@@ -148,7 +148,7 @@
       $.ajax({
         type: "GET",
         dataType: 'json',
-        cache: false,
+        cache: true,
         url: url,
         success: function (data) {
           if (!data.Message) {
@@ -206,7 +206,11 @@
     //Recipe and more info buttons
     function registerBClicks() {
       $('.button-r').click(function (e) {
-        getRecipeData($(e.target).attr("recipeid"));
+        if ($(e.target).attr("retrieved") && $(e.target).attr("retrieved") == "true") {
+          $(e.target).fadeToggle(500); //Already there so no need to get it again
+        } else {
+          getRecipeData($(e.target).attr("recipeid"), $(e.target)); //Populate the data
+        }
       });
 
       $('.button-mi').click(function (e) {
