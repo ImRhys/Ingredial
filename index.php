@@ -100,6 +100,7 @@
           $("#recipes-data").append(generateRecipeHTML(Data.Results[i]));
         }
       }
+      registerRBClicks();
     }
 
     function getRecipes(RecipeArr) {
@@ -163,10 +164,12 @@
     });
 
     //Recipe button
-    $('.button-r').click(function (e) {
-      console.log(this.attr("recipeid"));
-      console.log(e); 
-    });
+    function registerRBClicks() {
+      $('.button-r').click(function (e) {
+        console.log(this.attr("recipeid"));
+        console.log(e);
+      });
+    }
 
     var counter = 3;
     $(ms).on('keyup', function (e, m, v) {
