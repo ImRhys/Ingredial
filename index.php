@@ -22,7 +22,7 @@
 
 <a href="tempsecond.php">Example search.</a>
 
-<div class="container" id="main-search" style="display: none;">
+<div class="container blur ease" id="main-search">
   <div class="col-sm-6 col-centered offset-top">
     <img src="img/logo.png" class="img-responsive" id="main-logo" alt="Main logo"/>
 
@@ -46,9 +46,6 @@
 
 <script>
   $(function () {
-    //Fade out main search so we can 'enter'
-    $('#main-search').hide();
-
     //Set body colour to black for the splash
     $('body').css("background-color: #000000;")
 
@@ -89,10 +86,6 @@
       });
     }
 
-    function swapBodyBackground() {
-      $('body').toggleClass('body-true'); //Using CSS3 for animated switch
-    }
-
     function submitf() {
       alert(JSON.stringify(ms.getValue()));
     }
@@ -110,7 +103,7 @@
       if (ms.getRawValue().length > 2) { //BigOven won't accept query lower than three chars
         counter++;
         if (counter > 1) { //Cut our calls in half
-          console.log(ms.getRawValue()); //TODO send to /actual/ function 
+          console.log(ms.getRawValue()); //TODO send to /actual/ function
           counter = 0;
         }
       }
@@ -118,8 +111,7 @@
 
     $('.enter_link').click(function () {
       $(this).parent().fadeOut(500);
-      $('#main-search').fadeIn(500);
-      swapBodyBackground();
+      $('#main-search').toggleClass('blur'); //Using CSS3
     });
   });
 </script>
