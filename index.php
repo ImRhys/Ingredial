@@ -79,16 +79,10 @@
         url: url,
         success: function (data) {
           console.log(data);
-        },
-        error: function(e) {
-          console.log(e);
+          ms.setData(data);
+          //$('#ms-scrabble').magicSuggest().setData(data);
         }
       });
-    }
-
-    function updateDataCallback(data) {
-      console.log(data);
-      //$('#ms-scrabble').magicSuggest().setData(data);
     }
 
     function submitf() {
