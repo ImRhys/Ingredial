@@ -177,6 +177,24 @@
       });
     }
 
+    function randomRecipe() {
+      var url = "http://ingredial.azurewebsites.net/theprox.php?url=https://api2.bigoven.com/recipes/random&api_key=" + apiKey;
+      $.ajax({
+        type: "GET",
+        dataType: 'json',
+        cache: true,
+        url: url,
+        success: function (data) {
+          if (!data.Message) {
+            window.open(data.WebURL, '_blank');
+          } else {
+            noAPIkeyPrompt();
+          }
+        }
+      });
+    }
+
+
     function noAPIkeyPrompt() {
       alert("Please set the API key!");
     }
@@ -199,7 +217,7 @@
 
     //Random recipe button
     $('#randomr').click(function () {
-      alert("Random recipe!") //TODO <-- this
+      randomRecipe();
     });
 
     //Recipe and more info buttons
