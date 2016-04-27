@@ -48,7 +48,7 @@
 
     <div class="col-md-9 col-centered">
       <hr>
-      <p class="footer">Copyright &copy; 2016 ingredial.domain.bla - All Rights Reserved</p>
+      <p class="footer">Copyright &copy; 2016 ingredial.azurewebsites.net - All Rights Reserved</p>
     </div>
   </div>
 </div>
@@ -121,7 +121,7 @@
       + "<h4>Category</h4>" + Data.Category
       + "<h4>Ingredients</h4>" + Ingredients
       + "<h4>Instructions</h4><p>" + Data.Instructions.replace(/(?:\r\n|\r|\n)/g, '<br />') + "</p>"
-      + "<p><b>" + Data.FavoriteCount + " people favourited this recipe.</b></p>"
+      + "<br /><p><b>" + Data.FavoriteCount + " people favourited this recipe.</b></p>"
       ;
     }
 
