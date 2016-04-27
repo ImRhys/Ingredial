@@ -44,9 +44,7 @@
       <p id="recipes-main-description" class="maininfo"></p>
     </div>
 
-    <div class="col-md-9 col-centered table-bordered recipes" id="recipes-data"> <!-- Auto generated -->
-      &nbsp;
-    </div>
+    <div class="col-md-9 col-centered table-bordered recipes" id="recipes-data"><!-- Auto generated --></div>
 
     <div class="col-md-9 col-centered">
       <hr>
@@ -84,14 +82,13 @@
         + "<h4 class='media-heading'>" + title + "</h4> <!-- Dish name -->"
         + "<button type='button' class='btn btn-default body-buttons button-r' recipeid='" + recipeID + "'>Recipe</button>"
         + "<button type='button' class='btn btn-default body-buttons button-mi' recipeid='" + recipeID + "' weburl='" + webURL + "'>More Information</button>"
-        + "<div class='col-sm-12 table-bordered'" + recipeID + ">"
-        + "</div></div></div>"
+        + "<div class='col-sm-12 table-bordered' id='" + recipeID + "'></div></div></div>"
         ;
     }
 
     function processRecipes(Data) {
       //$("#recipes-main").fadeOut(500).fadeIn(500);
-      $("#recipes-data").html("&nbsp;"); //Clear it out
+      $("#recipes-data").html(""); //Clear it out
 
       if (Data.Results.length > 0) {
         $("#recipes-main-header").html("Hurray!");
@@ -106,6 +103,23 @@
         $("#recipes-main-description").html("We didn't managed to find anything that matches your selections.. we're sorry.");
       }
       registerBClicks();
+    }
+
+    function processRecipe(Data) {
+
+    }
+
+    function getRecipeData(RecipeID) {
+      var url = "http://ingredial.azurewebsites.net/theprox.php?url=https://api2.bigoven.com/recipe/" + RecipeID + "&api_key=" + apiKey;
+      $.ajax({
+        type: "GET",
+        dataType: 'json',
+        cache: false,
+        url: url,
+        success: function (data) {
+          console.log(data); //TODO delete after debugging!
+        }
+      });
     }
 
     function getRecipes(RecipeArr) {
@@ -171,7 +185,7 @@
     //Recipe and more info buttons
     function registerBClicks() {
       $('.button-r').click(function (e) {
-        //$(e.target).attr("recipeid");
+        getRecipeData($(e.target).attr("recipeid"));
       });
 
       $('.button-mi').click(function (e) {
