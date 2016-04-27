@@ -1,19 +1,16 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Isaacs
- * Date: 26/04/2016
- * Time: 20:45
- */
 $url = $_GET['url'];
-$parameters ="";
+$parameters = "";
 foreach($_GET as $key => $value){
   if($key != "url") {
-    $parameters = $parameters."&".$key."=".$value;
+    $parameters = $parameters . "&" . $key . "=" . $value;
   }
 }
 $parameters = substr($parameters, 1);
-$finalurl = $url."?".$parameters;
+
+echo $parameters;
+
+$finalurl = $url . "?" . $parameters;
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
