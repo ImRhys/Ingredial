@@ -209,11 +209,10 @@
       $('.button-r').click(function (e) {
         if ($(e.target).attr("retrieved") && $(e.target).attr("retrieved") == "true") {
           $("#" + $(e.target).attr("recipeid")).fadeToggle(500); //Already there so no need to get it again
-            if ($(e.target).html() == "Minimize") {
-              $(e.target).html("Maximize");
-            } else {
-              $(e.target).html("Minimize");
-            }
+          if ($(e.target).html() == "Minimize") {
+            $(e.target).html("Maximize");
+          } else {
+            $(e.target).html("Minimize");
           }
         } else {
           $(e.target).html("Loading...");
