@@ -74,6 +74,7 @@
       var imageURL = Data.PhotoUrl;
       var title = Data.Title;
       var recipeID = Data.RecipeID;
+      var webURL = Data.WebURL;
 
       //Written horribly due to some browsers adding unneeded whitespace.. you know who you are *cough* IE *cough*.
       return ""
@@ -82,7 +83,7 @@
         + "<div class='media-body'>"
         + "<h4 class='media-heading'>" + title + "</h4> <!-- Dish name -->"
         + "<button type='button' class='btn btn-default body-buttons button-r' recipeid='" + recipeID + "'>Recipe</button>"
-        + "<button type='button' class='btn btn-default body-buttons button-mi' recipeid='" + recipeID + "'>More Information</button>"
+        + "<button type='button' class='btn btn-default body-buttons button-mi' recipeid='" + recipeID + "' weburl='" + webURL + "'>More Information</button>"
         + "<div class='col-sm-12 table-bordered'" + recipeID + ">"
         + "</div></div></div>"
         ;
@@ -100,7 +101,7 @@
           $("#recipes-data").append(generateRecipeHTML(Data.Results[i]));
         }
       }
-      registerRBClicks();
+      registerBClicks();
     }
 
     function getRecipes(RecipeArr) {
@@ -164,10 +165,13 @@
     });
 
     //Recipe button
-    function registerRBClicks() {
+    function registerBClicks() {
       $('.button-r').click(function (e) {
-        console.log(e);
-        console.log(this.attr("recipeid"));
+        //$(e.target).attr("recipeid");
+      });
+
+      $('.button-mi').click(function (e) {
+        window.open($(e.target).attr("weburl"), '_blank');
       });
     }
 

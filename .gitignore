@@ -1,2 +1,4 @@
 #Ignore idea
 .idea
+#Test file
+test.php
