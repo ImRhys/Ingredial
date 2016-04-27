@@ -20,8 +20,6 @@
   <a href="#" class="enter_link">Enter the website</a>
 </div>
 
-<a href="tempsecond.php">Example search.</a>
-
 <div class="container blur ease" id="main-search">
   <div class="col-sm-6 col-centered offset-top">
     <img src="img/logo.png" class="img-responsive" id="main-logo" alt="Main logo"/>
@@ -37,6 +35,38 @@
         </div>
       </form>
     </div>
+  </div>
+
+  <!-- Recipes -->
+  <div class="col-md-9 col-centered table-bordered recipes">
+    <h3>Welcome text.</h3>
+    <p class="maininfo">Lorem ipsum dolor sit amet, brute nonumes eum in, mea nibh debet phaedrum at. Sit perfecto oportere qualisque ex! Modus debet elitr cu vim, ei eripuit dignissim dissentias vix, vis eros similique eu! Has voluptatum accommodare ex. Impetus tritani labitur sed ad, mel id illud ridens dolorem.</p>
+  </div>
+
+  <div class="col-md-9 col-centered table-bordered recipes">
+    <hr>
+
+    <div class="media">
+      <div class="media-left"> <!-- Food image -->
+        <a href="#">
+          <img class="media-object force-resize" src="" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h4 class="media-heading"></h4> <!-- Dish name -->
+        <p class="text-justify"></p> <!-- Dish description -->
+        <button type="button" class="btn btn-default body-buttons">Recipe</button>
+        <button type="button" class="btn btn-default body-buttons">More Information</button>
+        <div class="col-sm-12 table-bordered">
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-9 col-centered">
+    <hr>
+    <p class="footer">Copyright &copy; 2016 ingredial.domain.bla - All Rights Reserved</p>
   </div>
 </div>
 
