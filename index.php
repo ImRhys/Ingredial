@@ -45,10 +45,8 @@
 <script src="js/magicsuggest-min.js"></script>
 
 <script>
-  $(function () {
-    //Set body colour to black for the splash
-    $('body').css("background-color: #000000;")
 
+  $(function () {
     var apiKey = "";
 
     var ms = $('#ms-scrabble').magicSuggest({
@@ -58,10 +56,10 @@
     });
 
     function getRecipe(RecipeId) {
-      var url = "https://api2.bigoven.com/recipe/" + RecipeId + "?api_key=" + apiKey + "&callback=?";
+      var url = "https://api2.bigoven.com/recipe/" + RecipeId + "?api_key=" + apiKey;
       $.ajax({
         type: "GET",
-        dataType: 'jsonp',
+        dataType: 'json',
         cache: false,
         url: url,
         success: function (data) {
@@ -73,21 +71,31 @@
     }
 
     function getSuggestion(CurrentStr) {
-      var url = "https://api2.bigoven.com/autocomplete?query=" + CurrentStr + "&limit=10&api_key=" + apiKey + "&callback=?";
+      var url = "http://http://ingredial.azurewebsites.net/theprox.php?url=https://api2.bigoven.com/recipe/autocomplete?query=" + CurrentStr + "&limit=10&api_key=" + apiKey;
       $.ajax({
         type: "GET",
-        dataType: 'jsonp',
-        cache: false,
+        dataType: 'json',
+        cache: true,
         url: url,
         success: function (data) {
           console.log(data);
-          ms.setData(data);
+        },
+        error: function(e) {
+          console.log(e);
         }
       });
     }
 
+    function updateDataCallback(data) {
+      console.log(data);
+      //$('#ms-scrabble').magicSuggest().setData(data);
+    }
+
     function submitf() {
       alert(JSON.stringify(ms.getValue()));
+      if (ms.getRawValue().length < 3) {
+        //TODO Get random recipe
+      }
     }
 
     $('#submit').click(function () {
@@ -103,7 +111,7 @@
       if (ms.getRawValue().length > 2) { //BigOven won't accept query lower than three chars
         counter++;
         if (counter > 1) { //Cut our calls in half
-          console.log(ms.getRawValue()); //TODO send to /actual/ function
+          getSuggestion(ms.getRawValue());
           counter = 0;
         }
       }
