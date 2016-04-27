@@ -45,9 +45,9 @@
 <script src="js/magicsuggest-min.js"></script>
 
 <script>
+  var apiKey = "";
 
   $(function () {
-    var apiKey = "";
 
     var ms = $('#ms-scrabble').magicSuggest({
       placeholder: 'What do you have to hand?',
