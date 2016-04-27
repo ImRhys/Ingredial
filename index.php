@@ -73,7 +73,6 @@
     function generateRecipeHTML(Data) {
       var imageURL = Data.PhotoUrl;
       var title = Data.Title;
-      var description = Data.Title;
       var recipeID = Data.RecipeID;
 
       //Written horribly due to some browsers adding unneeded whitespace.. you know who you are *cough* IE *cough*.
@@ -82,7 +81,6 @@
         + "<div class='media-left'> <!-- Food image --><a href='#'><img class='media-object force-resize' src='" + imageURL + "' alt='" + title + "'></a></div>"
         + "<div class='media-body'>"
         + "<h4 class='media-heading'>" + title + "</h4> <!-- Dish name -->"
-        + "<p class='text-justify'>" + description + "</p> <!-- Dish description -->"
         + "<button type='button' class='btn btn-default body-buttons' recipeid='" + recipeID + "'>Recipe</button>"
         + "<button type='button' class='btn btn-default body-buttons' recipeid='" + recipeID + "'>More Information</button>"
         + "<div class='col-sm-12 table-bordered'>"
