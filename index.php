@@ -91,15 +91,18 @@
 
     function processRecipes(Data) {
       //$("#recipes-main").fadeOut(500).fadeIn(500);
-      $("#recipes-main-header").html("Hurray!");
-      $("#recipes-main-description").html("We found you some dishes for your selection!");
-      if (Data.Results.length > 0) {
-        $("#recipes-data").html("<hr>"); //Clear it out before repopulating
+      $("#recipes-data").html("<hr>"); //Clear it out before repopulating
 
+      if (Data.Results.length > 0) {
+        $("#recipes-main-header").html("Hurray!");
+        $("#recipes-main-description").html("We found something! Take a look below!");
         var i;
         for (i = 0; i < Data.Results.length; ++i) {
           $("#recipes-data").append(generateRecipeHTML(Data.Results[i]));
         }
+      } else {
+        $("#recipes-main-header").html("Boo..");
+        $("#recipes-main-description").html("We didn't managed to find anything that matches your selections.. we're sorry.");
       }
       registerBClicks();
     }
