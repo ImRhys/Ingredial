@@ -47,7 +47,7 @@
         voluptatum accommodare ex. Impetus tritani labitur sed ad, mel id illud ridens dolorem.</p>
     </div>
 
-    <div class="col-md-9 col-centered table-bordered recipes">
+    <div class="col-md-9 col-centered table-bordered recipes" id="recipes-data">
       <hr>
 
 
@@ -100,7 +100,7 @@
       if (Data.Results.length > 0) {
         var i;
         for (i = 0; i < Data.Results.length; ++i) {
-          $("#recipes-main").append(generateRecipeHTML(Data.Results[i]));
+          $("#recipes-data").append(generateRecipeHTML(Data.Results[i]));
         }
       }
     }
