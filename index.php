@@ -81,8 +81,8 @@
         + "<div class='media-left'> <!-- Food image --><a href='#'><img class='media-object force-resize' src='" + imageURL + "' alt='" + title + "'></a></div>"
         + "<div class='media-body'>"
         + "<h4 class='media-heading'>" + title + "</h4> <!-- Dish name -->"
-        + "<button type='button' class='btn btn-default body-buttons button-r' data-recipeid='" + recipeID + "'>Recipe</button>"
-        + "<button type='button' class='btn btn-default body-buttons button-mi' data-recipeid='" + recipeID + "'>More Information</button>"
+        + "<button type='button' class='btn btn-default body-buttons button-r' recipeid='" + recipeID + "'>Recipe</button>"
+        + "<button type='button' class='btn btn-default body-buttons button-mi' recipeid='" + recipeID + "'>More Information</button>"
         + "<div class='col-sm-12 table-bordered'" + recipeID + ">"
         + "</div></div></div>"
         ;
@@ -163,8 +163,9 @@
     });
 
     //Recipe button
-    $('.button-r').click(function() {
-      alert($('.button-r').data("recipeid"))
+    $('.button-r').click(function (e) {
+      console.log(this.attr("recipeid"));
+      console.log(e);
     });
 
     var counter = 3;
