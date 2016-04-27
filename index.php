@@ -121,7 +121,7 @@
       + "<h4>Category</h4>" + Data.Category
       + "<h4>Ingredients</h4>" + Ingredients
       + "<h4>Instructions</h4><p>" + Data.Instructions.replace(/(?:\r\n|\r|\n)/g, '<br />') + "</p>"
-      + "<p><b>" + Data.FavoriteCount + " people favorited this recipe.</b></p>"
+      + "<p><b>" + Data.FavoriteCount + " people favourited this recipe.</b></p>"
       ;
     }
 
@@ -139,6 +139,7 @@
         success: function (data) {
           processRecipe(data, RecipeID);
           Target.attr("retrieved", "true");
+          Target.html("Minimize");
         }
       });
     }
@@ -208,7 +209,14 @@
       $('.button-r').click(function (e) {
         if ($(e.target).attr("retrieved") && $(e.target).attr("retrieved") == "true") {
           $("#" + $(e.target).attr("recipeid")).fadeToggle(500); //Already there so no need to get it again
+            if ($(e.target).html() == "Minimize") {
+              $(e.target).html("Maximize");
+            } else {
+              $(e.target).html("Minimize");
+            }
+          }
         } else {
+          $(e.target).html("Loading...");
           getRecipeData($(e.target).attr("recipeid"), $(e.target)); //Populate the data
         }
       });
