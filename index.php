@@ -40,17 +40,12 @@
   <!-- Recipes -->
   <div id="recipes-main" style="display: none;">
     <div class="col-md-9 col-centered table-bordered recipes">
-      <h3>Welcome text.</h3>
-
-      <p class="maininfo">Lorem ipsum dolor sit amet, brute nonumes eum in, mea nibh debet phaedrum at. Sit perfecto
-        oportere qualisque ex! Modus debet elitr cu vim, ei eripuit dignissim dissentias vix, vis eros similique eu! Has
-        voluptatum accommodare ex. Impetus tritani labitur sed ad, mel id illud ridens dolorem.</p>
+      <h3 id="recipes-main-header">Welcome text.</h3>
+      <p class="recipes-main-description"></p>
     </div>
 
-    <div class="col-md-9 col-centered table-bordered recipes" id="recipes-data">
+    <div class="col-md-9 col-centered table-bordered recipes" id="recipes-data"> <!-- Auto generated -->
       <hr>
-
-
     </div>
 
     <div class="col-md-9 col-centered">
@@ -97,6 +92,8 @@
 
     function processRecipes(Data) {
       $("#recipes-main").fadeOut(500).fadeIn(500);
+      $("#recipes-main-header").html("Hurray!");
+      $("#recipes-main-description").html("We found you some dishes for your selection...");
       if (Data.Results.length > 0) {
         $("#recipes-data").html("<hr>"); //Clear it out before repopulating
 
@@ -150,6 +147,9 @@
       if (JSON.stringify(ms.getValue()) < 3) {
         //TODO Get random recipe
       } else {
+        $("#recipes-main").fadeIn(500);
+        $("#recipes-main-header").html("Processing...");
+        $("#recipes-main-description").html("Please wait whilst we try and find you some tasty dishes!");
         getRecipe(ms.getValue());
       }
     }
