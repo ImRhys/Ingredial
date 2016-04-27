@@ -85,6 +85,7 @@
     height: 140px;
     text-align: center;
     z-index: 1000;
+    background-color: white;
 }
 
 #splashscreen h1 {
