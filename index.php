@@ -166,8 +166,8 @@
     //Recipe button
     function registerRBClicks() {
       $('.button-r').click(function (e) {
-        console.log(this.attr("recipeid"));
         console.log(e);
+        console.log(this.attr("recipeid"));
       });
     }
 
