@@ -56,7 +56,7 @@
     });
 
     function getRecipe(RecipeArr) {
-      var url = "http://ingredial.azurewebsites.net/theprox.php?url=https://api2.bigoven.com/recipe/&any_kw=" + encodeURIComponent(RecipeArr.toString()) + "&api_key=" + apiKey;
+      var url = "http://ingredial.azurewebsites.net/theprox.php?url=https://api2.bigoven.com/recipes/&any_kw=" + encodeURIComponent(RecipeArr.toString()) + "&api_key=" + apiKey;
       $.ajax({
         type: "GET",
         dataType: 'json',
