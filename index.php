@@ -78,11 +78,18 @@
         cache: true,
         url: url,
         success: function (data) {
-          console.log(data);
-          ms.setData(data);
-          //$('#ms-scrabble').magicSuggest().setData(data);
+          console.log(data); //TODO remove Debugging
+          if ($.isArray(data)) {
+            ms.setData(data);
+          } else {
+            noAPIkeyPrompt();
+          }
         }
       });
+    }
+
+    function noAPIkeyPrompt() {
+      alert("Please set the API key!");
     }
 
     function submitf() {
