@@ -178,6 +178,7 @@
     }
 
     function randomRecipe() {
+      fRecipePrompt();
       var url = "http://ingredial.azurewebsites.net/theprox.php?url=https://api2.bigoven.com/recipes/random&api_key=" + apiKey;
       $.ajax({
         type: "GET",
@@ -186,7 +187,6 @@
         url: url,
         success: function (data) {
           if (!data.Message) {
-            fRecipePrompt();
             getRecipes(encodeURIComponent(data.Title));
           } else {
             noAPIkeyPrompt();
