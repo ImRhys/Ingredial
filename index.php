@@ -113,7 +113,7 @@
         url: url,
         success: function (data) {
           if (!data.Message) {
-            console.log(data);
+            console.log(data); //TODO delete after debugging!
             processRecipes(data);
           } else {
             noAPIkeyPrompt();
@@ -164,7 +164,7 @@
       alert("Random recipe!") //todo
     });
 
-    //Recipe button
+    //Recipe and more info buttons
     function registerBClicks() {
       $('.button-r').click(function (e) {
         //$(e.target).attr("recipeid");
