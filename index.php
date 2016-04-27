@@ -81,9 +81,9 @@
         + "<div class='media-left'> <!-- Food image --><a href='#'><img class='media-object force-resize' src='" + imageURL + "' alt='" + title + "'></a></div>"
         + "<div class='media-body'>"
         + "<h4 class='media-heading'>" + title + "</h4> <!-- Dish name -->"
-        + "<button type='button' class='btn btn-default body-buttons' recipeid='" + recipeID + "'>Recipe</button>"
-        + "<button type='button' class='btn btn-default body-buttons' recipeid='" + recipeID + "'>More Information</button>"
-        + "<div class='col-sm-12 table-bordered'>"
+        + "<button type='button' class='btn btn-default body-buttons button-r' data-recipeid='" + recipeID + "'>Recipe</button>"
+        + "<button type='button' class='btn btn-default body-buttons button-mi' data-recipeid='" + recipeID + "'>More Information</button>"
+        + "<div class='col-sm-12 table-bordered'" + recipeID + ">"
         + "</div></div></div>"
         ;
     }
@@ -102,7 +102,7 @@
       }
     }
 
-    function getRecipe(RecipeArr) {
+    function getRecipes(RecipeArr) {
       var url = "http://ingredial.azurewebsites.net/theprox.php?url=https://api2.bigoven.com/recipes/&any_kw=" + encodeURIComponent(RecipeArr.toString()) + "&api_key=" + apiKey;
       $.ajax({
         type: "GET",
@@ -120,7 +120,7 @@
       });
     }
 
-    function getSuggestion(CurrentStr) {
+    function getSuggestions(CurrentStr) {
       var url = "http://ingredial.azurewebsites.net/theprox.php?url=https://api2.bigoven.com/recipe/autocomplete&query=" + CurrentStr + "&limit=10&api_key=" + apiKey;
       $.ajax({
         type: "GET",
@@ -148,16 +148,23 @@
         $("#recipes-main").fadeIn(500);
         $("#recipes-main-header").html("Processing...");
         $("#recipes-main-description").html("Please wait whilst we try and find you some tasty dishes!");
-        getRecipe(ms.getValue());
+        getRecipes(ms.getValue());
       }
     }
 
+    //Submit button
     $('#submit').click(function () {
       submitf();
     });
 
+    //Random recipe button
     $('#randomr').click(function () {
       alert("Random recipe!") //todo
+    });
+
+    //Recipe button
+    $('.button-r').click(function() {
+      alert($('.button-r').data("recipeid"))
     });
 
     var counter = 3;
@@ -165,7 +172,7 @@
       if (ms.getRawValue().length > 2) { //BigOven won't accept query lower than three chars
         counter++;
         if (counter > 1) { //Cut our calls in half
-          getSuggestion(ms.getRawValue());
+          getSuggestions(ms.getRawValue());
           counter = 0;
         }
       }
