@@ -105,8 +105,30 @@
       registerBClicks();
     }
 
-    function processRecipe(Data) {
+    function generateRecipeDetails(Data) {
+      //Generate Ingredients list
+      var Ingredients = "<ul>";
+      var i;
+      for (i = 0; i < Data.Ingredients; ++i) {
+        Ingredients += "<li>" + Data.Ingredients[i].Name + " " + Data.Ingredients[i].DisplayQuantity + " " + Data.Ingredients[i].Unit + "</li>";
+      }
+      Ingredients += "</ul>";
 
+      //Return template string
+      return ""
+      + "<p class='text-justify'>" + Data.Description + "</p>"
+      + "<ul>"
+      + "<li>Cuisine: " + Data.Cuisine + "</li>"
+      + "<li>Category:" + Data.Category + "</li>"
+      + "<li>Ingredients: " + Ingredients + " </li>"
+      + "<li>Instructions: <p>" + Data.Instructions + "</p></li>"
+      + "<li>" + Data.FavoriteCount + " people favorited this recipe.</li>"
+      + "</ul>"
+      ;
+    }
+
+    function processRecipe(Data, RecipeID) {
+      $("#" + RecipeID).html(generateRecipeDetails(Data));
     }
 
     function getRecipeData(RecipeID) {
@@ -118,6 +140,7 @@
         url: url,
         success: function (data) {
           console.log(data); //TODO delete after debugging!
+          processRecipe(data, RecipeID)
         }
       });
     }
