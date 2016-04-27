@@ -50,22 +50,7 @@
     <div class="col-md-9 col-centered table-bordered recipes">
       <hr>
 
-      <div class="media">
-        <div class="media-left"> <!-- Food image -->
-          <a href="#">
-            <img class="media-object force-resize" src="" alt="">
-          </a>
-        </div>
-        <div class="media-body">
-          <h4 class="media-heading"></h4> <!-- Dish name -->
-          <p class="text-justify"></p> <!-- Dish description -->
-          <button type="button" class="btn btn-default body-buttons">Recipe</button>
-          <button type="button" class="btn btn-default body-buttons">More Information</button>
-          <div class="col-sm-12 table-bordered">
 
-          </div>
-        </div>
-      </div>
     </div>
 
     <div class="col-md-9 col-centered">
@@ -90,8 +75,34 @@
       required: true
     });
 
+    function generateRecipeHTML(Data) {
+      var imageURL = Data.PhotoUrl;
+      var title = Data.Title;
+      var description = Data.Title;
+      var recipeID = RecipeID;
+
+      //Written horribly due to some browsers adding unneeded whitespace.. you know who you are *cough* IE *cough*.
+      return ""
+        + "<div class='media'>"
+        + "<div class='media-left'> <!-- Food image --><a href='#'><img class='media-object force-resize' src='" + imageURL + "' alt='" + title + "'></a></div>"
+        + "<div class='media-body'>"
+        + "<h4 class='media-heading'>" + title + "</h4> <!-- Dish name -->"
+        + "<p class='text-justify'>" + description + "</p> <!-- Dish description -->"
+        + "<button type='button' class='btn btn-default body-buttons' recipeid='" + recipeID + "'>Recipe</button>"
+        + "<button type='button' class='btn btn-default body-buttons' recipeid='" + recipeID + "'>More Information</button>"
+        + "<div class='col-sm-12 table-bordered'>"
+        + "</div></div></div>"
+        ;
+    }
+
     function processRecipes(Data) {
-      $("recipes-main").fadeIn(500);
+      $("#recipes-main").fadeOut(500).fadeIn(500);
+      if (Data.Results.length > 0) {
+        var i;
+        for (i = 0; i < Data.Results.length; ++i) {
+          $("#recipes-main").append(generateRecipeHTML(Data.Results[i]));
+        }
+      }
     }
 
     function getRecipe(RecipeArr) {
