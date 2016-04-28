@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-
+<!-- If dolphins could fly would they fly into space on a majestic rocketship? -->
 <html>
 <head>
   <title>Ingredial</title>
@@ -14,7 +14,7 @@
 
 <div id="splashscreen">
   <h1>Welcome to Ingredial!</h1>
-  Throw in any ingredients you've got in your cupboard to find a tasty recipe!
+  Throw any ingredients you've got in your cupboard into the search bar to find a tasty recipe!
   <br/>
   <br/>
   <a href="#" class="enter_link">Enter the website</a>
@@ -52,6 +52,8 @@
     </div>
   </div>
 </div>
+
+<!-- I bet Dr Isaacs 5-3 with Derry City whilst he was playing with Bayern Munich on FIFA 15 -->
 
 <script src="js/jquery-2.2.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
@@ -128,6 +130,7 @@
       $("#" + RecipeID).html(generateRecipeDetails(Data));
     }
 
+    // Getting all the recipe data
     function getRecipeData(RecipeID, Target) {
       var url = "http://ingredial.azurewebsites.net/theprox.php?url=https://api2.bigoven.com/recipe/" + RecipeID + "&api_key=" + apiKey;
       $.ajax({
@@ -177,6 +180,7 @@
       });
     }
 
+    // To get Random Recipe when button is pressed
     function randomRecipe() {
       fRecipePrompt();
       var url = "http://ingredial.azurewebsites.net/theprox.php?url=https://api2.bigoven.com/recipes/random&api_key=" + apiKey;
@@ -195,7 +199,7 @@
       });
     }
 
-
+    // If no API key is found, prompt for API Key
     function noAPIkeyPrompt() {
       alert("Please set the API key!");
     }
