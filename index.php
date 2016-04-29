@@ -59,7 +59,7 @@
 <script src="js/magicsuggest-min.js"></script>
 
 <script>
-  var apiKey = "";
+  var apiKey = "VHSkzCuPFNh8WLb3Rc9UHy7pP1vLI5dI";
 
   $(function () {
 
