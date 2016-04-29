@@ -3,7 +3,7 @@ $url = $_GET['url'];
 $parameters = "";
 foreach($_GET as $key => $value){
   if($key != "url" || $key != "debug") {
-    $parameters = $parameters . "&" . $key . "=" . $value;
+    $parameters = $parameters . "&" . $key . "=" . urlencode($value);
   }
 }
 $parameters = substr($parameters, 1);
