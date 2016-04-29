@@ -191,7 +191,7 @@
         url: url,
         success: function (data) {
           if (!data.Message) {
-            getRecipes([data.Title]);
+            getRecipes([data.Title.replace( /(?!\s+$)\s+/g, ", " )]);
           } else {
             noAPIkeyPrompt();
           }
