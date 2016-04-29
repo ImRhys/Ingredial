@@ -7,7 +7,6 @@
   <link href="css/magicsuggest-min.css" rel="stylesheet">
   <link href="css/override.css" rel="stylesheet">
   <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
-
   <link rel="shortcut icon" href="favicon.ico"/>
 </head>
 <body class="body-start">
